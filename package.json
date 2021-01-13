@@ -2,7 +2,7 @@
   "name": "gulp-start",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "main.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,7 +21,6 @@
     "gulp-imagemin": "^7.1.0",
     "gulp-sass": "^4.1.0",
     "gulp-uglify-es": "^2.0.0",
-    "jquery": "^3.5.1",
     "styles": "^0.2.1"
   }
 }

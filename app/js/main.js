@@ -1,49 +1,64 @@
-$(function () {
+window.onload = () => {
   //get classNames from localStorage
   function getClassFromLocalStorage(i) {
-    return localStorage.getItem(`btnIndex` + i);
+    let result = localStorage.getItem(`btnIndex` + i);
+    if (typeof result === "string") {
+      return result.split(" ");
+    }
   }
   //get text from localStorage
   function getTextFromLocalStorage(i) {
     return localStorage.getItem(`btnText` + i);
   }
   //buttons forEach
-  $(".item__btn").each(function (index, element) {
+  document.querySelectorAll(".item__btn").forEach((element, index) => {
     let localStorageClass = getClassFromLocalStorage(index);
     let localStorageText = getTextFromLocalStorage(index);
     //get props from storage
-    if (localStorageClass != null && localStorageClass != '' && localStorageClass != undefined) {
-      $(this).removeClass('item__btn btn').addClass(`${localStorageClass}`);
+    if (
+      localStorageClass != null &&
+      localStorageClass != "" &&
+      localStorageClass != undefined
+    ) {
+      element.classList.remove("item__btn", "btn");
+      localStorageClass.forEach((className) => {
+        element.classList.add(className);
+        console.log(className);
+      });
     }
-    if (localStorageText != null && localStorageText != '' && localStorageText != undefined) {
-      $(this).text(`${localStorageText}`);
+    if (
+      localStorageText != null &&
+      localStorageText != "" &&
+      localStorageText != undefined
+    ) {
+      element.innerHTML = `${localStorageText}`;
     }
     //click function
     element.addEventListener("click", function () {
       //fetch
       fetch("https://jsonplaceholder.typicode.com/posts/1")
         .then(() => {
-          $(this).text("Загрузка");
-          $(this).addClass("btn-loading");
+          element.innerHTML = "Загрузка";
+          element.classList.add("btn-loading");
         })
         .then(() => {
           setTimeout(() => {
-            if (!$(this).hasClass("btn-success")) {
-              $(this).text("В корзине");
-              $(this).removeClass("btn-loading");
-              $(this).addClass("btn-success");
-              localStorage.setItem('btnIndex' + index, $(this).attr('class'))
-              localStorage.setItem('btnText' + index, $(this).text())
+            if (!element.classList.contains("btn-success")) {
+              element.innerHTML = "В корзине";
+              element.classList.remove("btn-loading");
+              element.classList.add("btn-success");
+              localStorage.setItem("btnIndex" + index, element.classList.value);
+              localStorage.setItem("btnText" + index, element.innerHTML);
             } else {
-              $(this).removeClass("btn-loading");
-              $(this).text("Купить");
-              $(this).removeClass("btn-success");
-              localStorage.setItem('btnIndex' + index, $(this).attr('class'))
-              localStorage.setItem('btnText' + index, $(this).text())
+              element.classList.remove("btn-loading");
+              element.innerHTML = "Купить";
+              element.classList.remove("btn-success");
+              localStorage.setItem("btnIndex" + index, element.classList.value);
+              localStorage.setItem("btnText" + index, element.innerHTML);
             }
-          }, 1000)
+          }, 1000);
         })
-        .catch(err => alert(err));
+        .catch((err) => alert(err));
     });
   });
-});
+};

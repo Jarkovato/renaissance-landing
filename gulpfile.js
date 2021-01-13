@@ -17,7 +17,7 @@ function browsersync() {
 //обработка скриптов
 function scripts() {
   return src([
-    'node_modules/jquery/dist/jquery.js', // JQUERY
+    // 'node_modules/jquery/dist/jquery.js', // JQUERY
     'app/js/main.js' //скрипт 
   ])
   .pipe(concat('main.min.js')) // объединение файлов в один
