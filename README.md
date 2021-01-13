@@ -1,5 +1,5 @@
 # Тестовое задание.
-Технологии: langing page html5, scss, jquery, gulp
+Технологии: langing page html5, scss, javascript, gulp
 
 #Деплой
 https://jarkovato.github.io/renaissance-landing/
