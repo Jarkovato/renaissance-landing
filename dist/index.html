@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">   -->
+  <link rel="stylesheet" href="style/style.min.css" />
+  <title>Redsoft тестовое задание</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__wrapper">
+        <a class="logo" href="#"><img class="logo__img" src="img/logo.svg" alt="Логотип"></a>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__list-item"><a href="" class="nav__link">Каталог</a></li>
+            <li class="nav__list-item"><a href="" class="nav__link">Доставка</a></li>
+            <li class="nav__list-item"><a href="" class="nav__link">Оплата</a></li>
+            <li class="nav__list-item"><a href="" class="nav__link">Контакты</a></li>
+            <li class="nav__list-item"><a href="" class="nav__link">О галерее</a></li>
+          </ul>
+        </nav>
+        <div class="search">
+          <input class="search__input" type="text" placeholder="Поиск по названию картины" size="30">
+          <button class="search__btn btn" type="submit">Найти</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="container">
+      <h1 class="main__title">Картины эпохи Возрождения</h1>
+      <div class="catalog">
+        <article class="catalog__item item">
+          <img class="item__img" src="img/birthvenus.jpg" alt="Рождение венеры">
+          <h2 class="item__title">&laquo;Рождение Венеры&raquo;</h2>
+          <span class="item__author">Сандро Ботичелли</span>
+          <div class="item__footer">
+            <div class="item__prices">
+              <span class="item__price-promo">2 000 000 $</span>
+              <span class="item__price">1 000 000 $</span>
+            </div>
+            <button class="item__btn btn" type="button">Купить</button>
+          </div>
+        </article>
+        <article class="catalog__item item">
+          <img class="item__img" src="img/lastsupper.jpg" alt="Тайная вечеря">
+          <h2 class="item__title">&laquo;Тайная вечеря&raquo;</h2>
+          <span class="item__author">Леонардо да Винчи</span>
+          <div class="item__footer">
+            <div class="item__prices">
+              <span class="item__price">3 000 000 $</span>
+            </div>
+            <button class="item__btn btn" type="button">Купить</button>
+          </div>
+        </article>
+        <article class="catalog__item item">
+          <img class="item__img" src="img/adam.jpg" alt="Сотворение адама">
+          <h2 class="item__title">&laquo;Сотворение Адама&raquo;</h2>
+          <span class="item__author">Микеланджело</span>
+          <div class="item__footer">
+            <div class="item__prices">
+              <span class="item__price-promo">6 000 000 $</span>
+              <span class="item__price">5 000 000 $</span>
+            </div>
+            <button class="item__btn btn" type="button">Купить</button>
+          </div>
+        </article>
+        <article class="catalog__item item not-aviable">
+          <img class="item__img" src="img/anatomylesson.jpg" alt="Урок анатомии">
+          <h2 class="item__title">&laquo;Урок анатомии&raquo;</h2>
+          <span class="item__author">Рембрандт</span>
+          <div class="item__footer">
+            <div class="item__prices">
+              <span class="item__price">Продана на аукционе</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__wrapper">
+        <a class="logo" href="#"><img class="logo__img" src="img/logo.svg" alt="Логотип"></a>
+        <nav class="footer__nav nav">
+          <ul class="nav__list">
+            <li class="nav__list-item"><a href="" class="nav__link">Каталог</a></li>
+            <li class="nav__list-item"><a href="" class="nav__link">Доставка</a></li>
+            <li class="nav__list-item"><a href="" class="nav__link">Оплата</a></li>
+            <li class="nav__list-item"><a href="" class="nav__link">Контакты</a></li>
+            <li class="nav__list-item"><a href="" class="nav__link">О галерее</a></li>
+          </ul>
+        </nav>
+        <div class="footer__contacts contacts">
+          <a class="contacts__phone" href="tel:+74955555555">+7 (495) 555-55-55</a>
+          <address class="contacts__adress" href="tel:+74955555555">г. Москва, ул. Расплетина, 24</address>
+        </div>
+      </div>
+    </div>
+  </footer>
+<script src="js/main.min.js"></script>
+</body>
+
+</html>

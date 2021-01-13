@@ -1,0 +1,98 @@
+@import "_normalize.scss";
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap");
+
+$brown-bg: #403432; //buttons bg
+$grey-bg: #f6f3f3; // header, main bg
+$grey-bg-light: #eceaea; // footer bg
+$white: #ffffff; // button-text
+$brown-txt: #343030; //header, main, footer-text
+$grey-txt: #555555; // footer text
+$border-color: #e1e1e1; //border
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: "Merriweather", serif;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: $grey-bg;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1216px;
+  margin: 0px auto;
+}
+.btn {
+  position: relative;
+  padding: 13px 36px 14px 36px;
+  background-color: $brown-bg;
+  color: $white;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-weight: 700;
+  line-height: 21px;
+  &:hover {
+    background: #776763;
+  }
+  &:disabled {
+    background: #c1b4b1;
+  }
+  &:before {
+    transform: translateY(-50%);
+    top: 50%;
+  }
+}
+
+.btn-success {
+  background-color: #5b3a32;
+  padding: 13px 9px 14px 32px !important;
+  &::before {
+    content: "";
+    position: absolute;
+    background-image: url(../img/success.svg);
+    width: 14px;
+    height: 14px;
+    left: 10px;
+    top: 50%;
+  }
+}
+.btn-loading {
+  background-color: #5b3a32;
+  padding: 13px 9px 14px 32px !important;
+  &::before {
+    content: "";
+    position: absolute;
+    background-image: url(../img/loading.png);
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+    left: 10px;
+    top: 30%;
+    animation: around 2s infinite;
+  }
+}
+
+@keyframes around {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@import "_header.scss";
+@import "_main.scss";
+@import "_footer.scss";
